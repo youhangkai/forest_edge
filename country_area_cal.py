@@ -4,7 +4,7 @@ import geopandas as gpd
 import pandas as pd
 from rasterio.features import geometry_mask
 
-# 1. ????
+# 1. Load data
 forest_2000_dir = '/mnt/cephfs/scratch/groups/chen_group/hangkai/2000Area'
 forest_2020_dir = '/mnt/cephfs/scratch/groups/chen_group/hangkai/2020Area'
 
@@ -15,7 +15,7 @@ common_files = set(forest_2000_files).intersection(set(forest_2020_files))
 
 countries = gpd.read_file('/mnt/cephfs/scratch/groups/chen_group/hangkai/country_shp/ne_10m_admin_0_countries.shp')
 
-# 2. ??????
+# 2. Calculate the area for each country
 result = []
 for idx, row in countries.iterrows():
     if idx <200:
@@ -86,7 +86,7 @@ for idx, row in countries.iterrows():
         'Total Forest Area 2020': forest_area2020
     })
 
-# 3. ????
+# 3. Output
 output_dir = '/mnt/cephfs/scratch/groups/chen_group/hangkai/country_forest_area1to5'
 os.makedirs(output_dir, exist_ok=True)
 

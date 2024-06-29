@@ -5,7 +5,7 @@ import pandas as pd
 from rasterio.features import geometry_mask
 
 
-# 1. 加载数据
+# 1. Load data
 forest_2000_dir = '/mnt/cephfs/scratch/groups/chen_group/hangkai/2000Edge'
 forest_2020_dir = '/mnt/cephfs/scratch/groups/chen_group/hangkai/2020Edge'
 
@@ -16,7 +16,7 @@ common_files = set(forest_2000_files).intersection(set(forest_2020_files))
 
 countries = gpd.read_file('/mnt/cephfs/scratch/groups/chen_group/hangkai/country_shp/ne_10m_admin_0_countries.shp')
 
-# 2. 计算森林面积
+# 2. Calculation of forest area
 result = []
 for idx, row in countries.iterrows():
     if idx <200:
@@ -93,7 +93,7 @@ for idx, row in countries.iterrows():
         'Total Forest Edge 2020': forest_edge2020
     })
 
-# 3. 输出结果
+# 3. output result
 output_dir = '/mnt/cephfs/scratch/groups/chen_group/hangkai/country_forest_area'
 os.makedirs(output_dir, exist_ok=True)
 

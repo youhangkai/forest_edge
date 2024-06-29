@@ -94,7 +94,7 @@ for idx, row in countries.iterrows():
         'Total Forest Edge 2020': total_forest_edge2020
     })
 
-# 3. 输出结果
+# 3. Output
 output_dir = '/mnt/cephfs/scratch/groups/chen_group/hangkai/country_forest_area'
 os.makedirs(output_dir, exist_ok=True)
 
