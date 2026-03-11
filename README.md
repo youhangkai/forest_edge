@@ -174,7 +174,7 @@ Contributions, suggestions, and issue reports are welcome. Please open an issue 
 
 ## License
 
-Specify license information here (e.g., MIT, GPL, or custom academic use license).
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
